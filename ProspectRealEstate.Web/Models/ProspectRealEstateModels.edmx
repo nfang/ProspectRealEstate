@@ -1,0 +1,1775 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ProspectRealEstate.Web.Models.DomainModels.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ProspectRealEstateWebModelsDomainModelsStoreContainer">
+          <EntitySet Name="Agents" EntityType="ProspectRealEstate.Web.Models.DomainModels.Store.Agents" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Attachments" EntityType="ProspectRealEstate.Web.Models.DomainModels.Store.Attachments" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Businesses" EntityType="ProspectRealEstate.Web.Models.DomainModels.Store.Businesses" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Categories" EntityType="ProspectRealEstate.Web.Models.DomainModels.Store.Categories" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Countries" EntityType="ProspectRealEstate.Web.Models.DomainModels.Store.Countries" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Languages" EntityType="ProspectRealEstate.Web.Models.DomainModels.Store.Languages" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Pages" EntityType="ProspectRealEstate.Web.Models.DomainModels.Store.Pages" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Properties" EntityType="ProspectRealEstate.Web.Models.DomainModels.Store.Properties" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PropertyTypes" EntityType="ProspectRealEstate.Web.Models.DomainModels.Store.PropertyTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="States" EntityType="ProspectRealEstate.Web.Models.DomainModels.Store.States" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Suburbs" EntityType="ProspectRealEstate.Web.Models.DomainModels.Store.Suburbs" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="ProspectRealEstate.Web.Models.DomainModels.Store.Users" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Agents_Users_Added" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Agents_Users_Added">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Agents" EntitySet="Agents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Agents_Users_Modified" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Agents_Users_Modified">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Agents" EntitySet="Agents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Attachments_Businesses" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Attachments_Businesses">
+            <End Role="Businesses" EntitySet="Businesses" />
+            <End Role="Attachments" EntitySet="Attachments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Attachments_Properties" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Attachments_Properties">
+            <End Role="Properties" EntitySet="Properties" />
+            <End Role="Attachments" EntitySet="Attachments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Attachments_Users_Added" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Attachments_Users_Added">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Attachments" EntitySet="Attachments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Attachments_Users_Modified" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Attachments_Users_Modified">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Attachments" EntitySet="Attachments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Businesses_Agents" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Businesses_Agents">
+            <End Role="Agents" EntitySet="Agents" />
+            <End Role="Businesses" EntitySet="Businesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Businesses_Categories" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Businesses_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Businesses" EntitySet="Businesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Businesses_Countries" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Businesses_Countries">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="Businesses" EntitySet="Businesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Businesses_Languages" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Businesses_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="Businesses" EntitySet="Businesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Businesses_States" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Businesses_States">
+            <End Role="States" EntitySet="States" />
+            <End Role="Businesses" EntitySet="Businesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Businesses_Suburbs" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Businesses_Suburbs">
+            <End Role="Suburbs" EntitySet="Suburbs" />
+            <End Role="Businesses" EntitySet="Businesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Businesses_Users_Added" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Businesses_Users_Added">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Businesses" EntitySet="Businesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Businesses_Users_Modified" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Businesses_Users_Modified">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Businesses" EntitySet="Businesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Categories_Languages" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Categories_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="Categories" EntitySet="Categories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Categories_Users_Added" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Categories_Users_Added">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Categories" EntitySet="Categories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Categories_Users_Modified" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Categories_Users_Modified">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Categories" EntitySet="Categories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Countries_Languages" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Countries_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="Countries" EntitySet="Countries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pages_Languages" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Pages_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="Pages" EntitySet="Pages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pages_Users_Added" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Pages_Users_Added">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Pages" EntitySet="Pages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pages_Users_Modified" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Pages_Users_Modified">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Pages" EntitySet="Pages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Properties_Agents" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Properties_Agents">
+            <End Role="Agents" EntitySet="Agents" />
+            <End Role="Properties" EntitySet="Properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Properties_Countries" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Properties_Countries">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="Properties" EntitySet="Properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Properties_Languages" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Properties_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="Properties" EntitySet="Properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Properties_PropertyTypes" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Properties_PropertyTypes">
+            <End Role="PropertyTypes" EntitySet="PropertyTypes" />
+            <End Role="Properties" EntitySet="Properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Properties_States" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Properties_States">
+            <End Role="States" EntitySet="States" />
+            <End Role="Properties" EntitySet="Properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Properties_Suburbs" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Properties_Suburbs">
+            <End Role="Suburbs" EntitySet="Suburbs" />
+            <End Role="Properties" EntitySet="Properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Properties_Users_Added" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Properties_Users_Added">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Properties" EntitySet="Properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Properties_Users_Modified" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Properties_Users_Modified">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Properties" EntitySet="Properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyTypes_Languages" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_PropertyTypes_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="PropertyTypes" EntitySet="PropertyTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyTypes_Users_Added" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_PropertyTypes_Users_Added">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="PropertyTypes" EntitySet="PropertyTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyTypes_Users_Modified" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_PropertyTypes_Users_Modified">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="PropertyTypes" EntitySet="PropertyTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_States_Languages" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_States_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="States" EntitySet="States" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Suburbs_Languages" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Suburbs_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="Suburbs" EntitySet="Suburbs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Suburbs_States" Association="ProspectRealEstate.Web.Models.DomainModels.Store.FK_Suburbs_States">
+            <End Role="States" EntitySet="States" />
+            <End Role="Suburbs" EntitySet="Suburbs" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Agents">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="phone" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="fax" Type="nvarchar" MaxLength="20" />
+          <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="profile_photo" Type="nvarchar(max)" />
+          <Property Name="added_on" Type="datetime" Nullable="false" />
+          <Property Name="added_by" Type="tinyint" Nullable="false" />
+          <Property Name="modified_on" Type="datetime" />
+          <Property Name="modified_by" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="Attachments">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="type" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="property_id" Type="int" />
+          <Property Name="business_id" Type="int" />
+          <Property Name="file_location" Type="nvarchar(max)" />
+          <Property Name="added_on" Type="datetime" Nullable="false" />
+          <Property Name="added_by" Type="tinyint" Nullable="false" />
+          <Property Name="modified_on" Type="datetime" />
+          <Property Name="modified_by" Type="tinyint" />
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Businesses">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="business_code" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="category" Type="tinyint" Nullable="false" />
+          <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="street" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="suburb" Type="smallint" Nullable="false" />
+          <Property Name="state" Type="tinyint" Nullable="false" />
+          <Property Name="country" Type="smallint" Nullable="false" />
+          <Property Name="postcode" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="featured" Type="bit" Nullable="false" />
+          <Property Name="latlng" Type="geography" />
+          <Property Name="asking" Type="bigint" Nullable="false" />
+          <Property Name="taking" Type="bigint" />
+          <Property Name="rent" Type="bigint" />
+          <Property Name="lease" Type="nvarchar" MaxLength="20" />
+          <Property Name="agent" Type="tinyint" />
+          <Property Name="added_on" Type="datetime" Nullable="false" />
+          <Property Name="added_by" Type="tinyint" Nullable="false" />
+          <Property Name="modified_on" Type="datetime" />
+          <Property Name="modified_by" Type="tinyint" />
+          <Property Name="status" Type="nvarchar" MaxLength="20" />
+          <Property Name="lang" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="added_by" Type="tinyint" Nullable="false" />
+          <Property Name="added_on" Type="datetime" Nullable="false" />
+          <Property Name="modified_by" Type="tinyint" />
+          <Property Name="modified_on" Type="datetime" />
+          <Property Name="lang" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Countries">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="country_code" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="telephone_code" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="common_name" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="formal_name" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="lang" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Languages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="lang_name" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="display_name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="iso_639x" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Pages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="content" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="added_by" Type="tinyint" Nullable="false" />
+          <Property Name="added_on" Type="datetime" Nullable="false" />
+          <Property Name="modified_by" Type="tinyint" />
+          <Property Name="modified_on" Type="datetime" />
+          <Property Name="lang" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="Properties">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="property_code" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="property_type" Type="tinyint" Nullable="false" />
+          <Property Name="num_of_bedroom" Type="tinyint" Nullable="false" />
+          <Property Name="num_of_bathroom" Type="tinyint" Nullable="false" />
+          <Property Name="num_of_carspace" Type="tinyint" Nullable="false" />
+          <Property Name="land_area" Type="int" />
+          <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="rent_or_sale" Type="nvarchar" MaxLength="10" />
+          <Property Name="featured" Type="bit" Nullable="false" />
+          <Property Name="street" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="suburb" Type="smallint" Nullable="false" />
+          <Property Name="state" Type="tinyint" Nullable="false" />
+          <Property Name="country" Type="smallint" Nullable="false" />
+          <Property Name="postcode" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="min_price" Type="int" />
+          <Property Name="max_price" Type="int" />
+          <Property Name="latlng" Type="geography" />
+          <Property Name="agent" Type="tinyint" />
+          <Property Name="added_on" Type="datetime" Nullable="false" />
+          <Property Name="added_by" Type="tinyint" Nullable="false" />
+          <Property Name="modified_on" Type="datetime" />
+          <Property Name="modified_by" Type="tinyint" />
+          <Property Name="status" Type="nvarchar" MaxLength="20" />
+          <Property Name="lang" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PropertyTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="added_by" Type="tinyint" Nullable="false" />
+          <Property Name="added_on" Type="datetime" Nullable="false" />
+          <Property Name="modified_by" Type="tinyint" />
+          <Property Name="modified_on" Type="datetime" />
+          <Property Name="lang" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="States">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="state_name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="lang" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Suburbs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="suburb_name" Type="nvarchar" Nullable="false" MaxLength="60" />
+          <Property Name="state" Type="tinyint" Nullable="false" />
+          <Property Name="lang" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="tinyint" Nullable="false" />
+          <Property Name="login" Type="nvarchar" Nullable="false" MaxLength="60" />
+          <Property Name="pass" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="display_name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="registered_on" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Agents_Users_Added">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Users" Multiplicity="1" />
+          <End Role="Agents" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Agents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agents">
+              <PropertyRef Name="added_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Agents_Users_Modified">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Users" Multiplicity="0..1" />
+          <End Role="Agents" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Agents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agents">
+              <PropertyRef Name="modified_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Attachments_Businesses">
+          <End Role="Businesses" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Businesses" Multiplicity="0..1" />
+          <End Role="Attachments" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Attachments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Businesses">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Attachments">
+              <PropertyRef Name="business_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Attachments_Properties">
+          <End Role="Properties" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Properties" Multiplicity="0..1" />
+          <End Role="Attachments" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Attachments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Properties">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Attachments">
+              <PropertyRef Name="property_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Attachments_Users_Added">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Users" Multiplicity="1" />
+          <End Role="Attachments" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Attachments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Attachments">
+              <PropertyRef Name="added_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Attachments_Users_Modified">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Users" Multiplicity="0..1" />
+          <End Role="Attachments" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Attachments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Attachments">
+              <PropertyRef Name="modified_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Businesses_Agents">
+          <End Role="Agents" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Agents" Multiplicity="0..1" />
+          <End Role="Businesses" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Businesses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agents">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Businesses">
+              <PropertyRef Name="agent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Businesses_Categories">
+          <End Role="Categories" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Categories" Multiplicity="1" />
+          <End Role="Businesses" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Businesses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Businesses">
+              <PropertyRef Name="category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Businesses_Countries">
+          <End Role="Countries" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Countries" Multiplicity="1" />
+          <End Role="Businesses" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Businesses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Businesses">
+              <PropertyRef Name="country" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Businesses_Languages">
+          <End Role="Languages" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Languages" Multiplicity="1" />
+          <End Role="Businesses" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Businesses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Businesses">
+              <PropertyRef Name="lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Businesses_States">
+          <End Role="States" Type="ProspectRealEstate.Web.Models.DomainModels.Store.States" Multiplicity="1" />
+          <End Role="Businesses" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Businesses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="States">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Businesses">
+              <PropertyRef Name="state" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Businesses_Suburbs">
+          <End Role="Suburbs" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Suburbs" Multiplicity="1" />
+          <End Role="Businesses" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Businesses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suburbs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Businesses">
+              <PropertyRef Name="suburb" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Businesses_Users_Added">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Users" Multiplicity="1" />
+          <End Role="Businesses" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Businesses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Businesses">
+              <PropertyRef Name="added_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Businesses_Users_Modified">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Users" Multiplicity="0..1" />
+          <End Role="Businesses" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Businesses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Businesses">
+              <PropertyRef Name="modified_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Categories_Languages">
+          <End Role="Languages" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Languages" Multiplicity="1" />
+          <End Role="Categories" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Categories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Categories">
+              <PropertyRef Name="lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Categories_Users_Added">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Users" Multiplicity="1" />
+          <End Role="Categories" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Categories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Categories">
+              <PropertyRef Name="added_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Categories_Users_Modified">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Users" Multiplicity="0..1" />
+          <End Role="Categories" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Categories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Categories">
+              <PropertyRef Name="modified_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Countries_Languages">
+          <End Role="Languages" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Languages" Multiplicity="1" />
+          <End Role="Countries" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Countries" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Countries">
+              <PropertyRef Name="lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pages_Languages">
+          <End Role="Languages" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Languages" Multiplicity="0..1" />
+          <End Role="Pages" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Pages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Pages">
+              <PropertyRef Name="lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pages_Users_Added">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Users" Multiplicity="1" />
+          <End Role="Pages" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Pages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Pages">
+              <PropertyRef Name="added_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pages_Users_Modified">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Users" Multiplicity="0..1" />
+          <End Role="Pages" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Pages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Pages">
+              <PropertyRef Name="modified_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Properties_Agents">
+          <End Role="Agents" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Agents" Multiplicity="0..1" />
+          <End Role="Properties" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Properties" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agents">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Properties">
+              <PropertyRef Name="agent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Properties_Countries">
+          <End Role="Countries" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Countries" Multiplicity="1" />
+          <End Role="Properties" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Properties" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Properties">
+              <PropertyRef Name="country" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Properties_Languages">
+          <End Role="Languages" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Languages" Multiplicity="1" />
+          <End Role="Properties" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Properties" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Properties">
+              <PropertyRef Name="lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Properties_PropertyTypes">
+          <End Role="PropertyTypes" Type="ProspectRealEstate.Web.Models.DomainModels.Store.PropertyTypes" Multiplicity="1" />
+          <End Role="Properties" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Properties" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyTypes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Properties">
+              <PropertyRef Name="property_type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Properties_States">
+          <End Role="States" Type="ProspectRealEstate.Web.Models.DomainModels.Store.States" Multiplicity="1" />
+          <End Role="Properties" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Properties" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="States">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Properties">
+              <PropertyRef Name="state" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Properties_Suburbs">
+          <End Role="Suburbs" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Suburbs" Multiplicity="1" />
+          <End Role="Properties" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Properties" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suburbs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Properties">
+              <PropertyRef Name="suburb" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Properties_Users_Added">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Users" Multiplicity="1" />
+          <End Role="Properties" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Properties" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Properties">
+              <PropertyRef Name="added_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Properties_Users_Modified">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Users" Multiplicity="0..1" />
+          <End Role="Properties" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Properties" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Properties">
+              <PropertyRef Name="modified_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyTypes_Languages">
+          <End Role="Languages" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Languages" Multiplicity="1" />
+          <End Role="PropertyTypes" Type="ProspectRealEstate.Web.Models.DomainModels.Store.PropertyTypes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PropertyTypes">
+              <PropertyRef Name="lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyTypes_Users_Added">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Users" Multiplicity="1" />
+          <End Role="PropertyTypes" Type="ProspectRealEstate.Web.Models.DomainModels.Store.PropertyTypes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PropertyTypes">
+              <PropertyRef Name="added_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyTypes_Users_Modified">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Users" Multiplicity="0..1" />
+          <End Role="PropertyTypes" Type="ProspectRealEstate.Web.Models.DomainModels.Store.PropertyTypes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PropertyTypes">
+              <PropertyRef Name="modified_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_States_Languages">
+          <End Role="Languages" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Languages" Multiplicity="1" />
+          <End Role="States" Type="ProspectRealEstate.Web.Models.DomainModels.Store.States" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="States">
+              <PropertyRef Name="lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Suburbs_Languages">
+          <End Role="Languages" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Languages" Multiplicity="1" />
+          <End Role="Suburbs" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Suburbs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Suburbs">
+              <PropertyRef Name="lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Suburbs_States">
+          <End Role="States" Type="ProspectRealEstate.Web.Models.DomainModels.Store.States" Multiplicity="1" />
+          <End Role="Suburbs" Type="ProspectRealEstate.Web.Models.DomainModels.Store.Suburbs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="States">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Suburbs">
+              <PropertyRef Name="state" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProspectRealEstate.Web.Models.DomainModels" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ProspectRealEstateDbContext" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Agents" EntityType="ProspectRealEstate.Web.Models.DomainModels.Agent" />
+          <EntitySet Name="Attachments" EntityType="ProspectRealEstate.Web.Models.DomainModels.Attachment" />
+          <EntitySet Name="Businesses" EntityType="ProspectRealEstate.Web.Models.DomainModels.Business" />
+          <EntitySet Name="Categories" EntityType="ProspectRealEstate.Web.Models.DomainModels.Category" />
+          <EntitySet Name="Countries" EntityType="ProspectRealEstate.Web.Models.DomainModels.Country" />
+          <EntitySet Name="Languages" EntityType="ProspectRealEstate.Web.Models.DomainModels.Language" />
+          <EntitySet Name="Pages" EntityType="ProspectRealEstate.Web.Models.DomainModels.Page" />
+          <EntitySet Name="Properties" EntityType="ProspectRealEstate.Web.Models.DomainModels.Property" />
+          <EntitySet Name="PropertyTypes" EntityType="ProspectRealEstate.Web.Models.DomainModels.PropertyType" />
+          <EntitySet Name="States" EntityType="ProspectRealEstate.Web.Models.DomainModels.State" />
+          <EntitySet Name="Suburbs" EntityType="ProspectRealEstate.Web.Models.DomainModels.Suburb" />
+          <EntitySet Name="Users" EntityType="ProspectRealEstate.Web.Models.DomainModels.User" />
+          <AssociationSet Name="FK_Agents_Users_Added" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Agents_Users_Added">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Agents" EntitySet="Agents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Agents_Users_Modified" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Agents_Users_Modified">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Agents" EntitySet="Agents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Businesses_Agents" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_Agents">
+            <End Role="Agents" EntitySet="Agents" />
+            <End Role="Businesses" EntitySet="Businesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Properties_Agents" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_Agents">
+            <End Role="Agents" EntitySet="Agents" />
+            <End Role="Properties" EntitySet="Properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Attachments_Businesses" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Attachments_Businesses">
+            <End Role="Businesses" EntitySet="Businesses" />
+            <End Role="Attachments" EntitySet="Attachments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Attachments_Properties" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Attachments_Properties">
+            <End Role="Properties" EntitySet="Properties" />
+            <End Role="Attachments" EntitySet="Attachments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Attachments_Users_Added" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Attachments_Users_Added">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Attachments" EntitySet="Attachments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Attachments_Users_Modified" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Attachments_Users_Modified">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Attachments" EntitySet="Attachments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Businesses_Categories" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Businesses" EntitySet="Businesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Businesses_Countries" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_Countries">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="Businesses" EntitySet="Businesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Businesses_States" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_States">
+            <End Role="States" EntitySet="States" />
+            <End Role="Businesses" EntitySet="Businesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Businesses_Suburbs" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_Suburbs">
+            <End Role="Suburbs" EntitySet="Suburbs" />
+            <End Role="Businesses" EntitySet="Businesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Businesses_Users_Added" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_Users_Added">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Businesses" EntitySet="Businesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Businesses_Users_Modified" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_Users_Modified">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Businesses" EntitySet="Businesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Categories_Users_Added" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Categories_Users_Added">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Categories" EntitySet="Categories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Categories_Users_Modified" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Categories_Users_Modified">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Categories" EntitySet="Categories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Properties_Countries" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_Countries">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="Properties" EntitySet="Properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pages_Languages" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Pages_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="Pages" EntitySet="Pages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pages_Users_Added" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Pages_Users_Added">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Pages" EntitySet="Pages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pages_Users_Modified" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Pages_Users_Modified">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Pages" EntitySet="Pages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Properties_PropertyTypes" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_PropertyTypes">
+            <End Role="PropertyTypes" EntitySet="PropertyTypes" />
+            <End Role="Properties" EntitySet="Properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Properties_States" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_States">
+            <End Role="States" EntitySet="States" />
+            <End Role="Properties" EntitySet="Properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Properties_Suburbs" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_Suburbs">
+            <End Role="Suburbs" EntitySet="Suburbs" />
+            <End Role="Properties" EntitySet="Properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Properties_Users_Added" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_Users_Added">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Properties" EntitySet="Properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Properties_Users_Modified" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_Users_Modified">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Properties" EntitySet="Properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyTypes_Users_Added" Association="ProspectRealEstate.Web.Models.DomainModels.FK_PropertyTypes_Users_Added">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="PropertyTypes" EntitySet="PropertyTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyTypes_Users_Modified" Association="ProspectRealEstate.Web.Models.DomainModels.FK_PropertyTypes_Users_Modified">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="PropertyTypes" EntitySet="PropertyTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Businesses_Languages" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_Languages">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="Business" EntitySet="Businesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Categories_Languages" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Categories_Languages">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="Category" EntitySet="Categories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Countries_Languages" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Countries_Languages">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="Country" EntitySet="Countries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Properties_Languages" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_Languages">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="Property" EntitySet="Properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyTypes_Languages" Association="ProspectRealEstate.Web.Models.DomainModels.FK_PropertyTypes_Languages">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="PropertyType" EntitySet="PropertyTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_States_Languages" Association="ProspectRealEstate.Web.Models.DomainModels.FK_States_Languages">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="State" EntitySet="States" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Suburbs_Languages" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Suburbs_Languages">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="Suburb" EntitySet="Suburbs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Suburbs_States" Association="ProspectRealEstate.Web.Models.DomainModels.FK_Suburbs_States">
+            <End Role="State" EntitySet="States" />
+            <End Role="Suburb" EntitySet="Suburbs" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Agent">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Byte" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="phone" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="fax" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="profile_photo" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="added_on" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="added_by" Type="Byte" Nullable="false" />
+          <Property Name="modified_on" Type="DateTime" Precision="3" />
+          <Property Name="modified_by" Type="Byte" />
+          <NavigationProperty Name="AddedBy" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Agents_Users_Added" FromRole="Agents" ToRole="Users" />
+          <NavigationProperty Name="ModifiedBy" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Agents_Users_Modified" FromRole="Agents" ToRole="Users" />
+          <NavigationProperty Name="Businesses" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_Agents" FromRole="Agents" ToRole="Businesses" />
+          <NavigationProperty Name="Properties" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_Agents" FromRole="Agents" ToRole="Properties" />
+        </EntityType>
+        <EntityType Name="Attachment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="type" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="property_id" Type="Int32" />
+          <Property Name="business_id" Type="Int32" />
+          <Property Name="file_location" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="added_on" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="added_by" Type="Byte" Nullable="false" />
+          <Property Name="modified_on" Type="DateTime" Precision="3" />
+          <Property Name="modified_by" Type="Byte" />
+          <NavigationProperty Name="Business" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Attachments_Businesses" FromRole="Attachments" ToRole="Businesses" />
+          <NavigationProperty Name="Property" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Attachments_Properties" FromRole="Attachments" ToRole="Properties" />
+          <NavigationProperty Name="AddedBy" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Attachments_Users_Added" FromRole="Attachments" ToRole="Users" />
+          <NavigationProperty Name="ModifiedBy" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Attachments_Users_Modified" FromRole="Attachments" ToRole="Users" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Business">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="business_code" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="category_id" Type="Byte" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="street" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="suburb_id" Type="Int16" Nullable="false" />
+          <Property Name="state_id" Type="Byte" Nullable="false" />
+          <Property Name="country_id" Type="Int16" Nullable="false" />
+          <Property Name="postcode" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="latlng" Type="Geography" />
+          <Property Name="asking" Type="Int64" Nullable="false" />
+          <Property Name="taking" Type="Int64" />
+          <Property Name="rent" Type="Int64" />
+          <Property Name="lease" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="agent_id" Type="Byte" />
+          <Property Name="added_on" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="added_by" Type="Byte" Nullable="false" />
+          <Property Name="modified_on" Type="DateTime" Precision="3" />
+          <Property Name="modified_by" Type="Byte" />
+          <Property Name="status" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Agent" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_Agents" FromRole="Businesses" ToRole="Agents" />
+          <NavigationProperty Name="Attachments" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Attachments_Businesses" FromRole="Businesses" ToRole="Attachments" />
+          <NavigationProperty Name="Category" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_Categories" FromRole="Businesses" ToRole="Categories" />
+          <NavigationProperty Name="Country" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_Countries" FromRole="Businesses" ToRole="Countries" />
+          <NavigationProperty Name="State" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_States" FromRole="Businesses" ToRole="States" />
+          <NavigationProperty Name="Suburb" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_Suburbs" FromRole="Businesses" ToRole="Suburbs" />
+          <NavigationProperty Name="AddedBy" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_Users_Added" FromRole="Businesses" ToRole="Users" />
+          <NavigationProperty Name="ModifiedBy" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_Users_Modified" FromRole="Businesses" ToRole="Users" />
+          <Property Type="String" Name="title" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Byte" Name="lang" Nullable="false" />
+          <NavigationProperty Name="Language" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_Languages" FromRole="Business" ToRole="Language" />
+          <Property Type="Boolean" Name="featured" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Byte" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="added_by" Type="Byte" Nullable="false" />
+          <Property Name="added_on" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_by" Type="Byte" />
+          <Property Name="modified_on" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Businesses" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_Categories" FromRole="Categories" ToRole="Businesses" />
+          <NavigationProperty Name="AddedBy" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Categories_Users_Added" FromRole="Categories" ToRole="Users" />
+          <NavigationProperty Name="ModifiedBy" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Categories_Users_Modified" FromRole="Categories" ToRole="Users" />
+          <Property Type="Byte" Name="lang" Nullable="false" />
+          <NavigationProperty Name="Language" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Categories_Languages" FromRole="Category" ToRole="Language" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="country_code" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="telephone_code" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="common_name" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="formal_name" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Businesses" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_Countries" FromRole="Countries" ToRole="Businesses" />
+          <NavigationProperty Name="Properties" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_Countries" FromRole="Countries" ToRole="Properties" />
+          <Property Type="Byte" Name="lang" Nullable="false" />
+          <NavigationProperty Name="Language" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Countries_Languages" FromRole="Country" ToRole="Language" />
+        </EntityType>
+        <EntityType Name="Language">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Byte" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageName" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="DisplayName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ISO639x" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Pages" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Pages_Languages" FromRole="Languages" ToRole="Pages" />
+          <NavigationProperty Name="Businesses" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_Languages" FromRole="Language" ToRole="Business" />
+          <NavigationProperty Name="Categories" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Categories_Languages" FromRole="Language" ToRole="Category" />
+          <NavigationProperty Name="Countries" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Countries_Languages" FromRole="Language" ToRole="Country" />
+          <NavigationProperty Name="Properties" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_Languages" FromRole="Language" ToRole="Property" />
+          <NavigationProperty Name="PropertyTypes" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_PropertyTypes_Languages" FromRole="Language" ToRole="PropertyType" />
+          <NavigationProperty Name="States" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_States_Languages" FromRole="Language" ToRole="State" />
+          <NavigationProperty Name="Suburbs" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Suburbs_Languages" FromRole="Language" ToRole="Suburb" />
+        </EntityType>
+        <EntityType Name="Page">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Byte" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="added_by" Type="Byte" Nullable="false" />
+          <Property Name="added_on" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_by" Type="Byte" />
+          <Property Name="modified_on" Type="DateTime" Precision="3" />
+          <Property Name="lang" Type="Byte" />
+          <NavigationProperty Name="Language" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Pages_Languages" FromRole="Pages" ToRole="Languages" />
+          <NavigationProperty Name="AddedBy" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Pages_Users_Added" FromRole="Pages" ToRole="Users" />
+          <NavigationProperty Name="ModifiedBy" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Pages_Users_Modified" FromRole="Pages" ToRole="Users" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Property">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="property_code" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="property_type" Type="Byte" Nullable="false" />
+          <Property Name="num_of_bedroom" Type="Byte" Nullable="false" />
+          <Property Name="num_of_bathroom" Type="Byte" Nullable="false" />
+          <Property Name="num_of_carspace" Type="Byte" Nullable="false" />
+          <Property Name="land_area" Type="Int32" />
+          <Property Name="description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="featured" Type="Boolean" Nullable="false" />
+          <Property Name="street" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="suburb_id" Type="Int16" Nullable="false" a:GetterAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Public" />
+          <Property Name="state_id" Type="Byte" Nullable="false" a:GetterAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Public" />
+          <Property Name="country_id" Type="Int16" Nullable="false" a:GetterAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Public" />
+          <Property Name="postcode" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="min_price" Type="Int32" />
+          <Property Name="max_price" Type="Int32" />
+          <Property Name="latlng" Type="Geography" />
+          <Property Name="agent_id" Type="Byte" />
+          <Property Name="added_on" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="added_by" Type="Byte" Nullable="false" />
+          <Property Name="modified_on" Type="DateTime" Precision="3" />
+          <Property Name="modified_by" Type="Byte" />
+          <Property Name="status" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Agent" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_Agents" FromRole="Properties" ToRole="Agents" />
+          <NavigationProperty Name="Attachments" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Attachments_Properties" FromRole="Properties" ToRole="Attachments" />
+          <NavigationProperty Name="Country" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_Countries" FromRole="Properties" ToRole="Countries" />
+          <NavigationProperty Name="PropertyType" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_PropertyTypes" FromRole="Properties" ToRole="PropertyTypes" />
+          <NavigationProperty Name="State" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_States" FromRole="Properties" ToRole="States" />
+          <NavigationProperty Name="Suburb" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_Suburbs" FromRole="Properties" ToRole="Suburbs" />
+          <NavigationProperty Name="AddedBy" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_Users_Added" FromRole="Properties" ToRole="Users" />
+          <NavigationProperty Name="ModifiedBy" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_Users_Modified" FromRole="Properties" ToRole="Users" />
+          <Property Type="String" Name="rent_or_sale" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Byte" Name="lang" Nullable="false" />
+          <NavigationProperty Name="Language" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_Languages" FromRole="Property" ToRole="Language" />
+        </EntityType>
+        <EntityType Name="PropertyType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Byte" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="added_by" Type="Byte" Nullable="false" />
+          <Property Name="added_on" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_by" Type="Byte" />
+          <Property Name="modified_on" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Properties" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_PropertyTypes" FromRole="PropertyTypes" ToRole="Properties" />
+          <NavigationProperty Name="AddedBy" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_PropertyTypes_Users_Added" FromRole="PropertyTypes" ToRole="Users" />
+          <NavigationProperty Name="ModifiedBy" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_PropertyTypes_Users_Modified" FromRole="PropertyTypes" ToRole="Users" />
+          <Property Type="Byte" Name="lang" Nullable="false" />
+          <NavigationProperty Name="Language" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_PropertyTypes_Languages" FromRole="PropertyType" ToRole="Language" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Byte" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="state_name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Businesses" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_States" FromRole="States" ToRole="Businesses" />
+          <NavigationProperty Name="Properties" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_States" FromRole="States" ToRole="Properties" />
+          <Property Type="Byte" Name="lang" Nullable="false" />
+          <NavigationProperty Name="Language" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_States_Languages" FromRole="State" ToRole="Language" />
+          <NavigationProperty Name="Suburbs" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Suburbs_States" FromRole="State" ToRole="Suburb" />
+        </EntityType>
+        <EntityType Name="Suburb">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="60" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Businesses" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_Suburbs" FromRole="Suburbs" ToRole="Businesses" />
+          <NavigationProperty Name="Properties" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_Suburbs" FromRole="Suburbs" ToRole="Properties" />
+          <Property Type="Byte" Name="lang" Nullable="false" />
+          <NavigationProperty Name="Language" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Suburbs_Languages" FromRole="Suburb" ToRole="Language" />
+          <Property Type="Byte" Name="state_id" Nullable="false" />
+          <NavigationProperty Name="State" Relationship="ProspectRealEstate.Web.Models.DomainModels.FK_Suburbs_States" FromRole="Suburb" ToRole="State" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Byte" Nullable="false" />
+          <Property Name="login" Type="String" Nullable="false" MaxLength="60" Unicode="true" FixedLength="false" />
+          <Property Name="pass" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="display_name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="registered_on" Type="DateTime" Nullable="false" Precision="3" />
+          </EntityType>
+        <Association Name="FK_Agents_Users_Added">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.User" Multiplicity="1" />
+          <End Role="Agents" Type="ProspectRealEstate.Web.Models.DomainModels.Agent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agents">
+              <PropertyRef Name="added_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Agents_Users_Modified">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.User" Multiplicity="0..1" />
+          <End Role="Agents" Type="ProspectRealEstate.Web.Models.DomainModels.Agent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agents">
+              <PropertyRef Name="modified_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Businesses_Agents">
+          <End Role="Agents" Type="ProspectRealEstate.Web.Models.DomainModels.Agent" Multiplicity="0..1" />
+          <End Role="Businesses" Type="ProspectRealEstate.Web.Models.DomainModels.Business" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agents">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Businesses">
+              <PropertyRef Name="agent_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Properties_Agents">
+          <End Role="Agents" Type="ProspectRealEstate.Web.Models.DomainModels.Agent" Multiplicity="0..1" />
+          <End Role="Properties" Type="ProspectRealEstate.Web.Models.DomainModels.Property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agents">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Properties">
+              <PropertyRef Name="agent_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Attachments_Businesses">
+          <End Role="Businesses" Type="ProspectRealEstate.Web.Models.DomainModels.Business" Multiplicity="0..1" />
+          <End Role="Attachments" Type="ProspectRealEstate.Web.Models.DomainModels.Attachment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Businesses">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Attachments">
+              <PropertyRef Name="business_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Attachments_Properties">
+          <End Role="Properties" Type="ProspectRealEstate.Web.Models.DomainModels.Property" Multiplicity="0..1" />
+          <End Role="Attachments" Type="ProspectRealEstate.Web.Models.DomainModels.Attachment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Properties">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Attachments">
+              <PropertyRef Name="property_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Attachments_Users_Added">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.User" Multiplicity="1" />
+          <End Role="Attachments" Type="ProspectRealEstate.Web.Models.DomainModels.Attachment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Attachments">
+              <PropertyRef Name="added_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Attachments_Users_Modified">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.User" Multiplicity="0..1" />
+          <End Role="Attachments" Type="ProspectRealEstate.Web.Models.DomainModels.Attachment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Attachments">
+              <PropertyRef Name="modified_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Businesses_Categories">
+          <End Role="Categories" Type="ProspectRealEstate.Web.Models.DomainModels.Category" Multiplicity="1" />
+          <End Role="Businesses" Type="ProspectRealEstate.Web.Models.DomainModels.Business" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Businesses">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Businesses_Countries">
+          <End Role="Countries" Type="ProspectRealEstate.Web.Models.DomainModels.Country" Multiplicity="1" />
+          <End Role="Businesses" Type="ProspectRealEstate.Web.Models.DomainModels.Business" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Businesses">
+              <PropertyRef Name="country_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Businesses_States">
+          <End Role="States" Type="ProspectRealEstate.Web.Models.DomainModels.State" Multiplicity="1" />
+          <End Role="Businesses" Type="ProspectRealEstate.Web.Models.DomainModels.Business" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="States">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Businesses">
+              <PropertyRef Name="state_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Businesses_Suburbs">
+          <End Role="Suburbs" Type="ProspectRealEstate.Web.Models.DomainModels.Suburb" Multiplicity="1" />
+          <End Role="Businesses" Type="ProspectRealEstate.Web.Models.DomainModels.Business" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suburbs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Businesses">
+              <PropertyRef Name="suburb_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Businesses_Users_Added">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.User" Multiplicity="1" />
+          <End Role="Businesses" Type="ProspectRealEstate.Web.Models.DomainModels.Business" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Businesses">
+              <PropertyRef Name="added_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Businesses_Users_Modified">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.User" Multiplicity="0..1" />
+          <End Role="Businesses" Type="ProspectRealEstate.Web.Models.DomainModels.Business" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Businesses">
+              <PropertyRef Name="modified_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Categories_Users_Added">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.User" Multiplicity="1" />
+          <End Role="Categories" Type="ProspectRealEstate.Web.Models.DomainModels.Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Categories">
+              <PropertyRef Name="added_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Categories_Users_Modified">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.User" Multiplicity="0..1" />
+          <End Role="Categories" Type="ProspectRealEstate.Web.Models.DomainModels.Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Categories">
+              <PropertyRef Name="modified_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Properties_Countries">
+          <End Role="Countries" Type="ProspectRealEstate.Web.Models.DomainModels.Country" Multiplicity="1" />
+          <End Role="Properties" Type="ProspectRealEstate.Web.Models.DomainModels.Property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Properties">
+              <PropertyRef Name="country_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pages_Languages">
+          <End Role="Languages" Type="ProspectRealEstate.Web.Models.DomainModels.Language" Multiplicity="0..1" />
+          <End Role="Pages" Type="ProspectRealEstate.Web.Models.DomainModels.Page" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Pages">
+              <PropertyRef Name="lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pages_Users_Added">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.User" Multiplicity="1" />
+          <End Role="Pages" Type="ProspectRealEstate.Web.Models.DomainModels.Page" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Pages">
+              <PropertyRef Name="added_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pages_Users_Modified">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.User" Multiplicity="0..1" />
+          <End Role="Pages" Type="ProspectRealEstate.Web.Models.DomainModels.Page" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Pages">
+              <PropertyRef Name="modified_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Properties_PropertyTypes">
+          <End Role="PropertyTypes" Type="ProspectRealEstate.Web.Models.DomainModels.PropertyType" Multiplicity="1" />
+          <End Role="Properties" Type="ProspectRealEstate.Web.Models.DomainModels.Property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyTypes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Properties">
+              <PropertyRef Name="property_type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Properties_States">
+          <End Role="States" Type="ProspectRealEstate.Web.Models.DomainModels.State" Multiplicity="1" />
+          <End Role="Properties" Type="ProspectRealEstate.Web.Models.DomainModels.Property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="States">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Properties">
+              <PropertyRef Name="state_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Properties_Suburbs">
+          <End Role="Suburbs" Type="ProspectRealEstate.Web.Models.DomainModels.Suburb" Multiplicity="1" />
+          <End Role="Properties" Type="ProspectRealEstate.Web.Models.DomainModels.Property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suburbs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Properties">
+              <PropertyRef Name="suburb_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Properties_Users_Added">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.User" Multiplicity="1" />
+          <End Role="Properties" Type="ProspectRealEstate.Web.Models.DomainModels.Property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Properties">
+              <PropertyRef Name="added_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Properties_Users_Modified">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.User" Multiplicity="0..1" />
+          <End Role="Properties" Type="ProspectRealEstate.Web.Models.DomainModels.Property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Properties">
+              <PropertyRef Name="modified_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyTypes_Users_Added">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.User" Multiplicity="1" />
+          <End Role="PropertyTypes" Type="ProspectRealEstate.Web.Models.DomainModels.PropertyType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PropertyTypes">
+              <PropertyRef Name="added_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyTypes_Users_Modified">
+          <End Role="Users" Type="ProspectRealEstate.Web.Models.DomainModels.User" Multiplicity="0..1" />
+          <End Role="PropertyTypes" Type="ProspectRealEstate.Web.Models.DomainModels.PropertyType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PropertyTypes">
+              <PropertyRef Name="modified_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Businesses_Languages">
+          <End Type="ProspectRealEstate.Web.Models.DomainModels.Language" Role="Language" Multiplicity="1" />
+          <End Type="ProspectRealEstate.Web.Models.DomainModels.Business" Role="Business" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Business">
+              <PropertyRef Name="lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Categories_Languages">
+          <End Type="ProspectRealEstate.Web.Models.DomainModels.Language" Role="Language" Multiplicity="1" />
+          <End Type="ProspectRealEstate.Web.Models.DomainModels.Category" Role="Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Category">
+              <PropertyRef Name="lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Countries_Languages">
+          <End Type="ProspectRealEstate.Web.Models.DomainModels.Language" Role="Language" Multiplicity="1" />
+          <End Type="ProspectRealEstate.Web.Models.DomainModels.Country" Role="Country" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Country">
+              <PropertyRef Name="lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Properties_Languages">
+          <End Type="ProspectRealEstate.Web.Models.DomainModels.Language" Role="Language" Multiplicity="1" />
+          <End Type="ProspectRealEstate.Web.Models.DomainModels.Property" Role="Property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Property">
+              <PropertyRef Name="lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyTypes_Languages">
+          <End Type="ProspectRealEstate.Web.Models.DomainModels.Language" Role="Language" Multiplicity="1" />
+          <End Type="ProspectRealEstate.Web.Models.DomainModels.PropertyType" Role="PropertyType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PropertyType">
+              <PropertyRef Name="lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_States_Languages">
+          <End Type="ProspectRealEstate.Web.Models.DomainModels.Language" Role="Language" Multiplicity="1" />
+          <End Type="ProspectRealEstate.Web.Models.DomainModels.State" Role="State" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="State">
+              <PropertyRef Name="lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Suburbs_Languages">
+          <End Type="ProspectRealEstate.Web.Models.DomainModels.Language" Role="Language" Multiplicity="1" />
+          <End Type="ProspectRealEstate.Web.Models.DomainModels.Suburb" Role="Suburb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Suburb">
+              <PropertyRef Name="lang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Suburbs_States">
+          <End Type="ProspectRealEstate.Web.Models.DomainModels.State" Role="State" Multiplicity="1" />
+          <End Type="ProspectRealEstate.Web.Models.DomainModels.Suburb" Role="Suburb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Suburb">
+              <PropertyRef Name="state_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProspectRealEstateWebModelsDomainModelsStoreContainer" CdmEntityContainer="ProspectRealEstateDbContext">
+          <EntitySetMapping Name="Agents">
+            <EntityTypeMapping TypeName="ProspectRealEstate.Web.Models.DomainModels.Agent">
+              <MappingFragment StoreEntitySet="Agents">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="profile_photo" ColumnName="profile_photo" />
+                <ScalarProperty Name="added_on" ColumnName="added_on" />
+                <ScalarProperty Name="added_by" ColumnName="added_by" />
+                <ScalarProperty Name="modified_on" ColumnName="modified_on" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Attachments">
+            <EntityTypeMapping TypeName="ProspectRealEstate.Web.Models.DomainModels.Attachment">
+              <MappingFragment StoreEntitySet="Attachments">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="property_id" ColumnName="property_id" />
+                <ScalarProperty Name="business_id" ColumnName="business_id" />
+                <ScalarProperty Name="file_location" ColumnName="file_location" />
+                <ScalarProperty Name="added_on" ColumnName="added_on" />
+                <ScalarProperty Name="added_by" ColumnName="added_by" />
+                <ScalarProperty Name="modified_on" ColumnName="modified_on" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Businesses">
+            <EntityTypeMapping TypeName="ProspectRealEstate.Web.Models.DomainModels.Business">
+              <MappingFragment StoreEntitySet="Businesses">
+                <ScalarProperty Name="featured" ColumnName="featured" />
+                <ScalarProperty Name="lang" ColumnName="lang" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="business_code" ColumnName="business_code" />
+                <ScalarProperty Name="category_id" ColumnName="category" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="street" ColumnName="street" />
+                <ScalarProperty Name="suburb_id" ColumnName="suburb" />
+                <ScalarProperty Name="state_id" ColumnName="state" />
+                <ScalarProperty Name="country_id" ColumnName="country" />
+                <ScalarProperty Name="postcode" ColumnName="postcode" />
+                <ScalarProperty Name="latlng" ColumnName="latlng" />
+                <ScalarProperty Name="asking" ColumnName="asking" />
+                <ScalarProperty Name="taking" ColumnName="taking" />
+                <ScalarProperty Name="rent" ColumnName="rent" />
+                <ScalarProperty Name="lease" ColumnName="lease" />
+                <ScalarProperty Name="agent_id" ColumnName="agent" />
+                <ScalarProperty Name="added_on" ColumnName="added_on" />
+                <ScalarProperty Name="added_by" ColumnName="added_by" />
+                <ScalarProperty Name="modified_on" ColumnName="modified_on" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="ProspectRealEstate.Web.Models.DomainModels.Category">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="lang" ColumnName="lang" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="added_by" ColumnName="added_by" />
+                <ScalarProperty Name="added_on" ColumnName="added_on" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+                <ScalarProperty Name="modified_on" ColumnName="modified_on" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="ProspectRealEstate.Web.Models.DomainModels.Country">
+              <MappingFragment StoreEntitySet="Countries">
+                <ScalarProperty Name="lang" ColumnName="lang" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="country_code" ColumnName="country_code" />
+                <ScalarProperty Name="telephone_code" ColumnName="telephone_code" />
+                <ScalarProperty Name="common_name" ColumnName="common_name" />
+                <ScalarProperty Name="formal_name" ColumnName="formal_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Languages">
+            <EntityTypeMapping TypeName="ProspectRealEstate.Web.Models.DomainModels.Language">
+              <MappingFragment StoreEntitySet="Languages">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LanguageName" ColumnName="lang_name" />
+                <ScalarProperty Name="DisplayName" ColumnName="display_name" />
+                <ScalarProperty Name="ISO639x" ColumnName="iso_639x" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pages">
+            <EntityTypeMapping TypeName="ProspectRealEstate.Web.Models.DomainModels.Page">
+              <MappingFragment StoreEntitySet="Pages">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="title" />
+                <ScalarProperty Name="Content" ColumnName="content" />
+                <ScalarProperty Name="added_by" ColumnName="added_by" />
+                <ScalarProperty Name="added_on" ColumnName="added_on" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+                <ScalarProperty Name="modified_on" ColumnName="modified_on" />
+                <ScalarProperty Name="lang" ColumnName="lang" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Properties">
+            <EntityTypeMapping TypeName="ProspectRealEstate.Web.Models.DomainModels.Property">
+              <MappingFragment StoreEntitySet="Properties">
+                <ScalarProperty Name="lang" ColumnName="lang" />
+                <ScalarProperty Name="rent_or_sale" ColumnName="rent_or_sale" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="property_code" ColumnName="property_code" />
+                <ScalarProperty Name="property_type" ColumnName="property_type" />
+                <ScalarProperty Name="num_of_bedroom" ColumnName="num_of_bedroom" />
+                <ScalarProperty Name="num_of_bathroom" ColumnName="num_of_bathroom" />
+                <ScalarProperty Name="num_of_carspace" ColumnName="num_of_carspace" />
+                <ScalarProperty Name="land_area" ColumnName="land_area" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="featured" ColumnName="featured" />
+                <ScalarProperty Name="street" ColumnName="street" />
+                <ScalarProperty Name="suburb_id" ColumnName="suburb" />
+                <ScalarProperty Name="state_id" ColumnName="state" />
+                <ScalarProperty Name="country_id" ColumnName="country" />
+                <ScalarProperty Name="postcode" ColumnName="postcode" />
+                <ScalarProperty Name="min_price" ColumnName="min_price" />
+                <ScalarProperty Name="max_price" ColumnName="max_price" />
+                <ScalarProperty Name="latlng" ColumnName="latlng" />
+                <ScalarProperty Name="agent_id" ColumnName="agent" />
+                <ScalarProperty Name="added_on" ColumnName="added_on" />
+                <ScalarProperty Name="added_by" ColumnName="added_by" />
+                <ScalarProperty Name="modified_on" ColumnName="modified_on" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyTypes">
+            <EntityTypeMapping TypeName="ProspectRealEstate.Web.Models.DomainModels.PropertyType">
+              <MappingFragment StoreEntitySet="PropertyTypes">
+                <ScalarProperty Name="lang" ColumnName="lang" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="added_by" ColumnName="added_by" />
+                <ScalarProperty Name="added_on" ColumnName="added_on" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+                <ScalarProperty Name="modified_on" ColumnName="modified_on" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="States">
+            <EntityTypeMapping TypeName="ProspectRealEstate.Web.Models.DomainModels.State">
+              <MappingFragment StoreEntitySet="States">
+                <ScalarProperty Name="lang" ColumnName="lang" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="state_name" ColumnName="state_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suburbs">
+            <EntityTypeMapping TypeName="ProspectRealEstate.Web.Models.DomainModels.Suburb">
+              <MappingFragment StoreEntitySet="Suburbs">
+                <ScalarProperty Name="state_id" ColumnName="state" />
+                <ScalarProperty Name="lang" ColumnName="lang" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="suburb_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="ProspectRealEstate.Web.Models.DomainModels.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+                <ScalarProperty Name="display_name" ColumnName="display_name" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="registered_on" ColumnName="registered_on" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

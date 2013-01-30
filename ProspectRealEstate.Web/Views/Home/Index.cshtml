@@ -1,0 +1,229 @@
+﻿@model ProspectRealEstate.Web.Models.ViewModels.HomeViewModel
+@using Resx = ProspectRealEstate.Web.Resources;
+@{
+    ViewBag.Title = "Prospect Real Estate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="span8">
+        <div id="featured" class="carousel slide">
+            <div class="carousel-inner">
+                <!-- Carousel items -->
+                @for (int i = 0, num = Model.FeaturedItems.Count(); i < num; i++)
+                {
+                    if (i == 0)
+                    {
+                    <div class="active item">
+                        <img src="@Url.Content(Model.FeaturedItems.ElementAt(i).FeaturedPhoto)" alt="620x320" />
+                        <div class="carousel-caption">
+                            <h4>@Model.FeaturedItems.ElementAt(i).Subject</h4>
+                            <p>@Model.FeaturedItems.ElementAt(i).Tagline</p>
+                        </div>
+                    </div>
+                    }
+                    else
+                    {
+                    <div class="item">
+                        <img src="@Url.Content(Model.FeaturedItems.ElementAt(i).FeaturedPhoto)" alt="620x320" />
+                        <div class="carousel-caption">
+                            <h4>@Model.FeaturedItems.ElementAt(i).Subject</h4>
+                            <p>@Model.FeaturedItems.ElementAt(i).Tagline</p>
+                        </div>
+                    </div>
+                    }
+                }
+            </div>
+            <!-- Carousel nav -->
+            <a class="carousel-control left" href="#featured" data-slide="prev">&lsaquo;</a>
+            <a class="carousel-control right" href="#featured" data-slide="next">&rsaquo;</a>
+        </div>
+    </div>
+    <div class="span4">
+        <div class="home-search">
+            <h4 style="font-family: 'Open Sans Condensed', sans-serif; padding-left: 10px;">Search for</h4>
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#business-search" data-toggle="tab">@Resx.Home.Index.Business</a>
+                </li>
+                <li>
+                    <a href="#property-search" data-toggle="tab">@Resx.Home.Index.Property</a>
+                </li>
+            </ul>
+            <div id="tabContent" class="tab-content">
+                <div class="tab-pane active" id="business-search">
+                    @using (Html.BeginForm("Search", "Business", FormMethod.Get))
+                    {
+                        <label>@Resx.Home.Index.Location</label>
+                        @Html.ListBox("BusinessLocation", ViewBag.Suburbs as MultiSelectList,
+                        new
+                        {
+                            @class = "chzn-select",
+                            data_placeholder = "Choose suburbs..."
+                        })
+                        <label>@Resx.Home.Index.Category</label>
+                        @Html.DropDownList("Category", ViewBag.Categories as SelectList)
+                        <label>@Resx.Home.Index.AskingPrice</label>
+                        <div style="margin-bottom: 20px;">
+                            <span class="input-prepend">
+                                <span class="add-on">$</span>
+                                @Html.TextBox("MinAskingPrice", null, new { @class = "span1" })
+                            </span>
+                            <span style="padding: 0 10px; line-height: 30px">to</span>
+                            <span class="input-prepend">
+                                <span class="add-on">$</span>
+                                @Html.TextBox("MaxAskingPrice", null, new { @class = "span1" })
+                            </span>
+                        </div>
+                        <button type="submit" class="btn btn-primary">@Resx.Home.Index.Search</button>
+                    }
+                </div>
+                <div class="tab-pane" id="property-search">
+                    @using (Html.BeginForm("Search", "Property", FormMethod.Get, new { @class = "search-form" }))
+                    {
+                        <label>@Resx.Home.Index.Location</label>
+                        @Html.ListBox("PropertyLocation", ViewBag.Suburbs as MultiSelectList,
+                        new
+                        {
+                            @class = "chzn-select",
+                            data_placeholder = "Choose suburbs..."
+                        })
+                        <label>@Resx.Home.Index.RentOrSale</label>
+                        @Html.DropDownList("RentOrSale", ViewBag.RentOrSale as SelectList, "-- SELECT ONE --")
+                        <label>@Resx.Home.Index.PropertyType</label>
+                        @Html.ListBox("PropertyType", ViewBag.PropertyTypes as MultiSelectList,
+                        new
+                        {
+                            @class = "chzn-select",
+                            data_placeholder = "Choose property types..."
+                        })
+                        <ul class="rooms">
+                            <li>
+                                <label>@Resx.Home.Index.Bedroom</label>
+                                <select class="span1"></select>
+                            </li>
+                            <li>
+                                <label>@Resx.Home.Index.Bathroom</label>
+                                <select class="span1"></select>
+                            </li>
+                            <li>
+                                <label>@Resx.Home.Index.CarSpace</label>
+                                <select class="span1"></select>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                        <button type="submit" class="btn btn-primary">@Resx.Home.Index.Search</button>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="span6">
+        <div class='header section-header'>@Resx.Home.Index.LatestBusinessOffers</div>
+        <div class="row">
+            @foreach (var b in Model.LatestBusinesses)
+            {
+                <div class="span3">
+                    <div class="ad">
+                        <div class="figure">
+                            @if (!String.IsNullOrEmpty(b.ThumbnailFilePath))
+                            {
+                                <img src="@Url.Content(b.ThumbnailFilePath)" alt="270x200" width="270" height="200" />
+                            }
+                            else
+                            {
+                                <img src="" alt="270x200" width="270" height="200" />
+                            }
+                        </div>
+                        <div class="meta">
+                            <strong>
+                                @Html.ActionLink(b.Title, "Detail", "Business", new { id = b.ID }, new { @class = "biz-offers dtlink" })
+                            </strong>
+                            <dl>
+                                <dt>@Resx.Home.Index.Location:</dt>
+                                <dd>@b.Location<br />
+                                </dd>
+
+                                <dt>@Resx.Home.Index.Category:</dt>
+                                <dd>@b.Category<br />
+                                </dd>
+
+                                <dt>@Resx.Home.Index.AskingPrice:</dt>
+                                <dd>@b.AskingPrice<br />
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="span6">
+        <div class='header section-header'>@Resx.Home.Index.LatestPropertyOffers</div>
+        <div class="row">
+            @foreach (var p in Model.LatestProperties)
+            {
+                <div class="span3">
+                    <div class="ad">
+                        <div class="figure">
+                            @if (!String.IsNullOrEmpty(p.ThumbnailFilePath))
+                            {
+                                <img src="@Url.Content(p.ThumbnailFilePath)" alt="270x200" width="270" height="200" />
+                            }
+                            else
+                            {
+                                <img src="" alt="270x200" width="270" height="200" />
+                            }
+                        </div>
+                        <div class="meta">
+                            <strong>
+                                @Html.ActionLink(p.Title, "Detail", "Property", new { id = p.ID }, new { @class = "prop-offers dtlink" })
+                            </strong>
+                            <div class="meta">
+                                <div class="rooms">
+                                    <span class="room bedroom">@p.NumOfBedroom</span>
+                                    <span class="room bathroom">@p.NumOfBathroom</span>
+                                    <span class="room carspace">@p.NumOfCarspace</span>
+                                </div>
+                            </div>
+                            <div class="price">@p.Price</div>
+                            <p class="desc">
+                                @p.Description
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<div id="detail-modal" class="modal hide" data-remote="">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 class="modal-title"></h3>
+    </div>
+    <div class="modal-body"></div>
+</div>
+<script src="@Url.Content("~/Content/js/vendor/chosen.jquery.min.js")"></script>
+<link href="@Url.Content("~/Content/css/chosen.css")" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+    $(function () {
+        $('.chzn-select').chosen();
+
+        $('.dtlink').click(function () {
+            var $this = $(this)
+              , $modal = $('#detail-modal');
+
+            $('#detail-modal .modal-title').text($this.text());
+            $modal.data('remote', $this.attr('href'));
+            $modal.modal();
+
+            return false;
+        });
+
+        $('#detail-modal').on('hidden', function () {
+            $(this).removeData('modal');
+        });
+    });
+</script>

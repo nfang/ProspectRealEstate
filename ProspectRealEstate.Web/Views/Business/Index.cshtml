@@ -1,0 +1,173 @@
+﻿@model PagedList.IPagedList<ProspectRealEstate.Web.Models.ViewModels.BusinessListModel>
+@using Resx = ProspectRealEstate.Web.Resources;
+@{
+    ViewBag.Title = "Businesses for Sale - Prospect Real Estate";
+}
+
+<div class="row">
+    <div class="span8">
+        <div class="content">
+            <div>
+                <h3>@Resx.Business.Index.BusinessesForSale</h3>
+                @if (ViewContext.RouteData.Values["action"].ToString().ToLower() == "list")
+                {
+                    using (Html.BeginForm(null, null, FormMethod.Get))
+                    {
+                    <select name="sortOrder" onchange="document.forms[0].submit()">
+                        <option value="">@Resx.Business.Index.SortResults</option>
+                        <option value="lp" 
+                                @if (ViewBag.SortParam == "lp")
+                                { 
+                                    @:selected = "selected" 
+                                }>@Resx.Business.Index.LowestPrice
+                        </option>
+                        <option value="hp"
+                                @if (ViewBag.SortParam == "hp")
+                                { 
+                                    @:selected = "selected" 
+                                }>@Resx.Business.Index.HighestPrice
+                        </option>
+                        <option value="date"
+                                @if (ViewBag.SortParam == "date")
+                                { 
+                                    @:selected = "selected" 
+                                }>@Resx.Business.Index.Date
+                        </option>
+                    </select>
+                    }
+                }
+                else
+                {
+                    <div>
+                        <select id="selectSortOrder" name="sortOrder">
+                            <option value="">@Resx.Business.Index.SortResults</option>
+                            <option value="lp" 
+                                @if (ViewBag.SortParam == "lp")
+                                { 
+                                    @:selected = "selected" 
+                                }>@Resx.Business.Index.LowestPrice
+                            </option>
+                            <option value="hp"
+                                @if (ViewBag.SortParam == "hp")
+                                { 
+                                    @:selected = "selected" 
+                                }>@Resx.Business.Index.HighestPrice
+                            </option>
+                            <option value="date"
+                                @if (ViewBag.SortParam == "date")
+                                { 
+                                    @:selected = "selected" 
+                                }>@Resx.Business.Index.Date
+                            </option>
+                        </select>
+                    </div>
+                }
+            </div>
+            <ul class="biz-list">
+                @foreach (var item in Model)
+                {
+                    <li class="list-item">
+                        <div class="list-date">
+                            <div class="month">@item.AddedOn.Month</div>
+                            <div class="day">@item.AddedOn.Day</div>
+                        </div>
+                        <div class="figure">
+                            @if (!String.IsNullOrEmpty(item.ThumbnailFilePath))
+                            {
+                                <img src="@Url.Content(@item.ThumbnailFilePath)" alt="4:3" width="160" height="120" />
+                            }
+                            else
+                            {
+                                <img src="" alt="4:3" width="160" height="120" />
+                            }
+
+                        </div>
+                        <div class="info">
+                            <div class="title">
+                                <a href="Detail/@item.ID" class="dtlink">@item.Title</a>
+                            </div>
+                            <div class="meta">
+                                <span class="location">@item.Location</span>
+                                <span class="separator">|</span>
+                                <span class="type">@item.Category</span>
+                                <span class="separator">|</span>
+                                <span class="asking-price">@item.AskingPrice</span>
+                            </div>
+                            <p class="desc">@item.Description</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                }
+            </ul>
+            @Html.Partial("Pager")
+        </div>
+    </div>
+    <div class="span4">
+        <div class="search-biz">
+            <h4 class="section-header">@Resx.Business.Index.FindABusiness</h4>
+            @using (Html.BeginForm("Search", "Business", FormMethod.Get, new { id = "formSearchBusiness" }))
+            {
+                <fieldset>
+                    <label>@Resx.Home.Index.Location</label>
+                    @Html.ListBox("BusinessLocation", ViewBag.Suburbs as MultiSelectList,
+                        new
+                        {
+                            @class = "chzn-select",
+                            data_placeholder = "Choose suburbs..."
+                        })
+                    <label>@Resx.Home.Index.Category</label>
+                    @Html.DropDownList("Category", ViewBag.Categories as SelectList)
+                    <label>@Resx.Business.Index.AskingPrice</label>
+                    <div style="margin-bottom: 20px;">
+                        <span class="input-prepend">
+                            <span class="add-on">$</span>
+                            @Html.TextBox("MinAskingPrice", null, new { @class = "span1" })
+                        </span>
+                        <span style="padding: 0 10px; line-height: 30px">to</span>
+                        <span class="input-prepend">
+                            <span class="add-on">$</span>
+                            @Html.TextBox("MaxAskingPrice", null, new { @class = "span1" })
+                        </span>
+                    </div>
+                    <input id="searchSortOrder" name="sortOrder" type="hidden" />
+                </fieldset>
+                <button type="submit" class="btn btn-primary">@Resx.Home.Index.Search</button>
+            }
+        </div>
+    </div>
+    <div id="detail-modal" class="modal hide" data-remote="">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 class="modal-title"></h3>
+        </div>
+        <div class="modal-body"></div>
+    </div>
+</div>
+<script src="@Url.Content("~/Content/js/vendor/chosen.jquery.min.js")"></script>
+<link href="@Url.Content("~/Content/css/chosen.css")" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+    $('.chzn-select').chosen();
+
+    $(function () {
+        $('.dtlink').click(function () {
+            var $this = $(this)
+              , $modal = $('#detail-modal');
+
+            $('#detail-modal .modal-title').text($this.text());
+            $modal.data('remote', $this.attr('href'));
+            $modal.modal();
+
+            return false;
+        });
+
+        $('#detail-modal').on('hidden', function () {
+            $(this).removeData('modal');
+        });
+
+        $('#selectSortOrder').change(function () {
+            var $this = $(this);
+            $('#searchSortOrder').val($this.val());
+            $('#formSearchBusiness').submit();
+        });
+    });
+</script>

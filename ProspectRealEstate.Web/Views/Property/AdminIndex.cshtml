@@ -1,0 +1,108 @@
+﻿@model PagedList.IPagedList<ProspectRealEstate.Web.Models.ViewModels.PropertyListModel>
+@{
+    ViewBag.Title = "Property management - Prospect Real Estate Admin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (@Html.BeginForm("Admin", null, FormMethod.Get, new { style = "float: left" }))
+{
+    <label class="radio inline">
+        @Html.RadioButton("language", "all", true, new { onclick = "document.forms[0].submit()" })
+        All
+    </label>
+    <label class="radio inline">
+        @Html.RadioButton("language", "en", new { onclick = "document.forms[0].submit()" })
+        English only
+    </label>
+    <label class="radio inline">
+        @Html.RadioButton("language", "cn", new { onclick = "document.forms[0].submit()" })
+        Chinese only
+    </label>
+}
+
+<div class="submit-button">
+    @Html.ActionLink("Add", "Create", null, new { @class = "btn btn-primary pull-right" })
+</div>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>
+                @Html.ActionLink("Title", "Admin", new { sortOrder = ViewBag.TitleSortParam })
+            </th>
+            <th>
+                @Html.ActionLink("Added On", "Admin", new { sortOrder = ViewBag.DateSortParam })
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in @Model)
+        {
+            <tr>
+                <td>
+                    @if (item.IsFeatured)
+                    {
+                        <i class="icon-star"></i>
+                    }
+                    @item.ID
+                </td>
+                <td>@item.Title</td>
+                <td>@item.AddedOn.ToShortDateString()</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "Property", new { id = @item.ID }, new { @class = "btn" })
+                    @if (item.Status != "archived")
+                    {
+                        <a class="btn btn-danger archive-button" data-key="@item.ID">Archive</a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-success activate-button" data-key="@item.ID">Activate</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script type="text/javascript">
+    $(function () {
+        $('.archive-button').click(function () {
+            var $this = $(this)
+              , model = {
+                  ID: $this.data("key")
+              };
+
+            $.ajax({
+                url: '/en-AU/Property/SetArchive',
+                type: 'POST',
+                data: model,
+                success: function (result) {
+                    if (result === 'success') {
+                        $this.attr('class', 'btn btn-success activate-button');
+                        $this.text('Activate');
+                    }
+                }
+            });
+        });
+
+        $('.activate-button').click(function () {
+            var $this = $(this)
+              , model = {
+                  ID: $this.data("key")
+              }
+
+            $.ajax({
+                url: '/en-AU/Property/SetActive',
+                type: 'POST',
+                data: model,
+                success: function (result) {
+                    if (result === 'success') {
+                        $this.attr('class', 'btn btn-danger archive-button');
+                        $this.text('Archive');
+                    }
+                }
+            });
+        });
+    });
+</script>

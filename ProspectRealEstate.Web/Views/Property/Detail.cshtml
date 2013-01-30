@@ -1,0 +1,153 @@
+﻿@model ProspectRealEstate.Web.Models.Property
+@using Resx = ProspectRealEstate.Web.Resources;
+@{
+    Layout = null;
+}
+
+<div id="gallery" class="gallery">
+    <div class="prev" onclick="prev()"><i class="icon-chevron-left icon-white"></i></div>
+    <ul class="photos" style="left: 0">
+        @foreach (var item in Model.Attachments)
+        {
+            if (Model.Attachments.ToList().IndexOf(item) == 0)
+            {
+            <li style="margin-left: 120px;">
+                <img src="@Url.Content(item.file_location)" alt="400x300" width="400" height="300" />
+            </li>
+            }
+            else
+            {
+            <li>
+                <img src="@Url.Content(item.file_location)" alt="400x300" width="400" height="300" />
+            </li>
+            }
+        }
+    </ul>
+    <div class="next" onclick="next()"><i class="icon-chevron-right icon-white"></i></div>
+</div>
+<div class="clearfix"></div>
+<div class="details">
+    <div id="msgMailSent" class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        @Resx.Detail.Detail.ThankYouMessage
+    </div>
+    <div id="msgMailError" class="alert alert-error">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        @Resx.Detail.Detail.ErrorMessage
+    </div>
+    <div class="information inner-container">
+        <div class="meta">
+            <div class="rooms">
+                <span class="room bedroom">@Model.num_of_bedroom</span>
+                <span class="room bathroom">@Model.num_of_bathroom</span>
+                <span class="room carspace">@Model.num_of_carspace</span>
+            </div>
+        </div>
+        <p>@Model.description</p>
+        <dl>
+            <dt>@Resx.Home.Index.Location:</dt>
+            <dd>
+                <div>@Model.street, @Model.Suburb.name, @Model.postcode</div>
+            </dd>
+
+            <dt>@Resx.Home.Index.PropertyType:</dt>
+            <dd>
+                <div>@Model.PropertyType.name</div>
+            </dd>
+
+            <dt>@Resx.Property.Sale.PriceRange:</dt>
+            <dd>
+                <div>@Model.PriceRange</div>
+            </dd>
+
+            @if (@Model.land_area.HasValue)
+            {
+                <dt>@Resx.Detail.Detail.LandArea:</dt>
+                <dd>
+                    <div>@Model.land_area</div>
+                </dd>
+            }
+
+        </dl>
+    </div>
+    <div class="inner-container">
+        <h4>@Resx.Detail.Detail.Contact</h4>
+        @if (Model.agent_id.HasValue)
+        {
+            <div class="agent">
+                <strong>@Model.Agent.name</strong>
+                <div>@Model.Agent.phone</div>
+            </div>
+        }
+        @using (Html.BeginForm("SendQuery", null, FormMethod.Post, new
+        {
+            id = "formSendQuery",
+            @class = "contacts"
+        }))
+        {
+            if (Model.agent_id.HasValue)
+            {
+            @Html.Hidden("AgentName", Model.Agent.name)
+            @Html.Hidden("AgentEmail", Model.Agent.email)
+            }
+            @Html.Hidden("Subject", String.Join(",", @Model.property_code + ": " + @Model.street, @Model.Suburb.name, @Model.postcode))
+            <fieldset>
+                <label>@Resx.Detail.Detail.YourName</label>
+                @Html.TextBox("UserName", null, new { @class = "span2 required" })
+
+                <label>@Resx.Detail.Detail.YourEmail</label>
+                @Html.TextBox("UserEmail", null, new { @class = "span2 required email" })
+
+                <label>@Resx.Detail.Detail.Message</label>
+                @Html.TextArea("Message",
+                new
+                {
+                    @class = "span2 required",
+                    rows = "3"
+                })
+            </fieldset>
+            <input type="button" class="btn btn-primary" value="@Resx.Detail.Detail.SendMyQuery" onclick="sendUserQuery()" />
+        }
+    </div>
+    <div class="clearfix"></div>
+</div>
+<script type="text/javascript">
+    function prev() {
+        var photos = $('.photos');
+        var leftValue = parseInt(photos.css('left'));
+        if (leftValue / 432 < 0) {
+            photos.animate({
+                left: '+=432px'
+            }, 500);
+        }
+    }
+
+    function next() {
+        var photos = $('.photos');
+        var leftValue = parseInt(photos.css('left'));
+        var len = photos.find('li').length;
+        if (leftValue / 432 > (-len + 1)) {
+            photos.animate({
+                left: '-=432px'
+            }, 500);
+        }
+    }
+
+    function sendUserQuery() {
+        var formSendQuery = $('#formSendQuery');
+        formSendQuery.validate();
+        if (formSendQuery.valid()) {
+            $.ajax({
+                url: formSendQuery.attr("action"),
+                type: formSendQuery.attr("method"),
+                data: formSendQuery.serialize(),
+                success: function (result) {
+                    $('#msgMailSent').show().delay(3000).fadeOut();
+                }
+            });
+        } else {
+            $('#msgMailError').show().delay(3000).fadeOut();
+            $('.details').scrollTop(0);
+        }
+    }
+</script>

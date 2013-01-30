@@ -1,0 +1,234 @@
+﻿@model ProspectRealEstate.Web.Models.Property
+@using (Html.BeginForm(null, null, FormMethod.Post,
+                       new
+                       {
+                           id = "formPropertyMgmt",
+                           @class = "form-horizontal",
+                           enctype = "multipart/form-data"
+                       }))
+{
+    @Html.HiddenFor(m => m.ID)
+
+@* That's ugly... *@
+    if (ViewContext.RouteData.Values["action"].ToString().ToLower() == "create")
+    {
+    <div class="control-group">
+        <label class="radio">
+            @Html.RadioButtonFor(m => m.lang, 1, new { name = "langOptions" })
+            English
+        </label>
+        <label class="radio">
+            @Html.RadioButtonFor(m => m.lang, 4, new { name = "langOptions" })
+            Chinese
+        </label>
+    </div>  
+    }
+    
+    <div class="control-group">
+        <label class="control-label" for="txtCode">Property Code</label>
+        <div class="controls">
+            @Html.TextBoxFor(m => m.property_code, new { @class = "required" })
+        </div>
+    </div>
+
+    <h5>General Information</h5>
+    <div class="control-group">
+        <label class="control-label">Rent or sale</label>
+        <div class="controls">
+            @Html.HiddenFor(m => m.rent_or_sale, new { id = "hRentOrSale" })
+            <label class="radio">
+                @Html.RadioButton("rsOpt", "", String.IsNullOrEmpty(Model.rent_or_sale), new { id = "rdbNotSpecified" })
+                Not specified
+            </label>
+            <label class="radio">
+                @Html.RadioButton("rsOpt", "", Model.rent_or_sale == "rent", new { id = "rdbRent" })
+                Rent
+            </label>
+            <label class="radio">
+                @Html.RadioButton("rsOpt", "", Model.rent_or_sale == "sale", new { id = "rdbSale" })
+                Sale
+            </label>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="txtType">Property Type</label>
+        <div class="controls">
+            @Html.DropDownList("property_type", ViewBag.PropertyTypes as SelectList, "-- SELECT ONE --")
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="txtNumOfBedroom">Num of bedroom</label>
+        <div class="controls">
+            @Html.TextBoxFor(m => m.num_of_bedroom)
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="txtNumOfBathroom">Num of bathroom</label>
+        <div class="controls">
+            @Html.TextBoxFor(m => m.num_of_bathroom)
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="txtNumOfCarspace">Num of car space</label>
+        <div class="controls">
+            @Html.TextBoxFor(m => m.num_of_carspace)
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="txtLandArea">Land area</label>
+        <div class="controls">
+            @Html.TextBoxFor(m => m.land_area)
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="txtDesc">Description</label>
+        <div class="controls">
+            @Html.TextAreaFor(m => m.description, new
+            {
+                id = "txtDesc",
+                @class = "span3",
+                rows = "3",
+                placeholder = "Enter text..."
+            })
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="chkFeatured">Featured</label>
+        <div class="controls">
+            <label class="checkbox">
+                @Html.CheckBoxFor(m => m.featured)
+            </label>
+        </div>
+    </div>
+    
+    <h5>Address</h5>
+    <div class="control-group">
+        <label class="control-label" for="txtStreet">Street</label>
+        <div class="controls">
+            @Html.TextBoxFor(m => m.street, new { @class = "required" })
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="txtSuburb">Suburb</label>
+        <div class="controls">
+            @Html.DropDownList("suburb_id", ViewBag.Suburbs as SelectList, "-- SELECT ONE --", new { @class = "required" })
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="txtState">State</label>
+        <div class="controls">
+            @Html.DropDownList("state_id", ViewBag.States as SelectList, "-- SELECT ONE --", new { @class = "required" })
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="txtCountry">Country</label>
+        <div class="controls">
+            @Html.DropDownList("country_id", ViewBag.Countries as SelectList, "-- SELECT ONE --", new { @class = "required" })
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="txtPostcode">Postcode</label>
+        <div class="controls">
+            @Html.TextBoxFor(m => m.postcode, new { @class = "required" })
+        </div>
+    </div>
+
+    <h5>Pricing</h5>
+    <div class="control-group">
+        <label class="control-label" for="txtMinPrice">Min Price</label>
+        <div class="controls">
+            @Html.TextBoxFor(m => m.min_price)
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="txtMaxPrice">Max Price</label>
+        <div class="controls">
+            @Html.TextBoxFor(m => m.max_price)
+        </div>
+    </div>
+
+    <h5>Attachments</h5>
+    <div class="control-group">
+        <ul class="ul-attachments">
+            @foreach (var item in Model.Attachments)
+            {
+                <li>
+                    <img src="@Url.Content(@item.file_location)" alt="" width="120" height="90">
+                    <div class="ul-attachments-controller">
+                        <a class="remove btn btn-danger" data-id="@item.ID" data-bid="@item.property_id">Remove</a>
+                    </div>
+                </li>
+            }
+            <li>
+                <div id="btn-add-attachments" class="btn btn-primary">Add</div>
+            </li>
+        </ul>
+        <div id="more-attachments" style="clear: both"></div>
+    </div>
+    
+    <h5>Agent</h5>
+    <div class="control-group">
+        <label class="control-label" for="txtAgent">Agent</label>
+        <div class="controls">
+            @Html.DropDownList("agent_id", ViewBag.Agents as SelectList, "-- SELECT ONE --")
+        </div>
+    </div>
+    
+    <div class="submit-button">
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+}
+
+<script type="text/javascript">
+    $(function () {
+        $('.ul-attachments-controller > .remove').click(function () {
+            if (confirm('Are you sure to remove this attachment?')) {
+                var $this = $(this)
+                  , model = {
+                      attachmentId: $(this).attr('data-id'),
+                      propertyId: $(this).attr('data-bid')
+                  };
+
+                $.ajax({
+                    url: '/en-AU/Property/RemoveAttachment',
+                    type: 'POST',
+                    data: model,
+                    success: function (result) {
+                        if (result === 'success') {
+                            $this.parent().parent().remove();
+                        }
+                    }
+                });
+            }
+        });
+
+        $('#btn-add-attachments').click(function () {
+            var inputAttachment = $('<input/>', {
+                type: 'file',
+                name: 'attachments'
+            });
+            $('#more-attachments').append(inputAttachment);
+        });
+
+        $('#formPropertyMgmt').submit(function () {
+            var isNotSpecifiedChecked = document.getElementById("rdbNotSpecified").checked
+              , isRentChecked = document.getElementById("rdbRent").checked
+              , isSaleChecked = document.getElementById("rdbSale").checked
+              , $rent_or_sale = $('#hRentOrSale')
+              , $this = $(this);
+
+            if (isNotSpecifiedChecked) {
+                $rent_or_sale.val('');
+            } else if (isRentChecked) {
+                $rent_or_sale.val('rent');
+            } else if (isSaleChecked) {
+                $rent_or_sale.val('sale');
+            }
+
+            $this.validate();
+            if (!$this.valid()) {
+                return false;
+            }
+        });
+    });
+</script>

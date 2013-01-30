@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7864e2a8e55d45fa87c743df6671dd7e" Name="Diagram1">
+        <EntityTypeShape EntityType="ProspectRealEstate.Web.Models.DomainModels.Agent" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProspectRealEstate.Web.Models.DomainModels.Attachment" Width="1.5" PointX="10.5" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProspectRealEstate.Web.Models.DomainModels.Business" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProspectRealEstate.Web.Models.DomainModels.Category" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProspectRealEstate.Web.Models.DomainModels.Country" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProspectRealEstate.Web.Models.DomainModels.Language" Width="1.5" PointX="3.75" PointY="27.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProspectRealEstate.Web.Models.DomainModels.Page" Width="1.5" PointX="6" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProspectRealEstate.Web.Models.DomainModels.Property" Width="1.5" PointX="8.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProspectRealEstate.Web.Models.DomainModels.PropertyType" Width="1.5" PointX="3" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProspectRealEstate.Web.Models.DomainModels.State" Width="1.5" PointX="3" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProspectRealEstate.Web.Models.DomainModels.Suburb" Width="1.5" PointX="1.25" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProspectRealEstate.Web.Models.DomainModels.User" Width="1.5" PointX="0.75" PointY="12.125" IsExpanded="true" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Agents_Users_Added" ManuallyRouted="false" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Agents_Users_Modified" ManuallyRouted="false" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_Agents" ManuallyRouted="false" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_Agents" ManuallyRouted="false" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Attachments_Businesses" ManuallyRouted="false" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Attachments_Properties" ManuallyRouted="false" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Attachments_Users_Added" ManuallyRouted="false" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Attachments_Users_Modified" ManuallyRouted="false" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_Countries" ManuallyRouted="false" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_States" ManuallyRouted="false" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_Suburbs" ManuallyRouted="false" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_Users_Added" ManuallyRouted="false" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_Users_Modified" ManuallyRouted="false" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Categories_Users_Added" ManuallyRouted="false" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Categories_Users_Modified" ManuallyRouted="false" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_Countries" ManuallyRouted="false" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Pages_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Pages_Users_Added" ManuallyRouted="false" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Pages_Users_Modified" ManuallyRouted="false" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_PropertyTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_States" ManuallyRouted="false" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_Suburbs" ManuallyRouted="false" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_Users_Added" ManuallyRouted="false" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_Users_Modified" ManuallyRouted="false" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_PropertyTypes_Users_Added" ManuallyRouted="false" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_PropertyTypes_Users_Modified" ManuallyRouted="false" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Businesses_Languages" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Categories_Languages" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Countries_Languages" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Properties_Languages" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_PropertyTypes_Languages" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_States_Languages" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Suburbs_Languages" />
+        <AssociationConnector Association="ProspectRealEstate.Web.Models.DomainModels.FK_Suburbs_States" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,16 @@
+﻿@model ProspectRealEstate.Web.Models.ViewModels.PageContent
+@{
+    ViewBag.Title = (@Model == null ? "Prospect Real Estate" : @Model.Title + " - Prospect Real Estate");
+}
+
+<div class="row">
+    <div class="span12">
+        <div class="content">
+            @if (@Model != null)
+            {
+                <h3>@Model.Title</h3>
+                <div>@Html.Raw(@Model.Content)</div>
+            }
+        </div>
+    </div>
+</div>

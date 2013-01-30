@@ -1,0 +1,65 @@
+﻿@model ProspectRealEstate.Web.Models.ViewModels.ContactUsEmail
+@using Resx = ProspectRealEstate.Web.Resources;
+@{
+    ViewBag.Title = "Contact Us";
+}
+<div class="row">
+    <div class="span12">
+        <div class="content">
+            <h3>@Resx.Shared.Layout.ContactUs</h3>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="span7">
+        <div class="content">
+            <h4>@Resx.ContactUs.Index.SendUsAMessage</h4>
+            <div id="msgMailSent" class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                Thank you for contacting us! <br />Your information has been sent and we should be in touch with you soon.
+            </div>
+            <form id="formContactUs" method="post" action="ContactUs/PostEmail">
+                <fieldset>
+                    <label>@Resx.ContactUs.Index.YourName</label>
+                    <input type="text" name="SenderName" class="span5 required">
+                    <label>@Resx.ContactUs.Index.YourEmail</label>
+                    <input type="text" name="From" class="span5 required email">
+                    <label>@Resx.ContactUs.Index.Message</label>
+                    <textarea class="span5 required" name="Message" rows="8" minlength="20"></textarea>
+                </fieldset>
+                <button id="btnSend" type="submit" class="btn btn-primary">@Resx.ContactUs.Index.Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="span5">
+        <h4>@Resx.ContactUs.Index.OurAddress</h4>
+        <address>
+            239 Bay Street<br>
+            Brighton, VIC 3186<br>
+            <attr title="Phone">Tel:</attr>
+            (03) 9596 9307<br>
+            <attr title="Fax">Fax: </attr>
+            (03) 9596 9308<br>
+            <a href="mailto:sales@prospectrealestate.com.au">sales@prospectrealestate.com.au</a>
+        </address>
+        <div id="map"></div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $('#formContactUs').submit(function () {
+            $(this).validate();
+            if ($(this).valid()) {
+                $.ajax({
+                    url: this.action,
+                    type: this.method,
+                    data: $(this).serialize(),
+                    success: function (result) {
+                        $('#msgMailSent').show().delay(3000).fadeOut();
+                    }
+                });
+            }
+            return false;
+        });
+    });
+</script>

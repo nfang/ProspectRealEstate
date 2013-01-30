@@ -1,0 +1,368 @@
+body {
+    border-top: .25em solid #252322;
+}
+
+a {
+    color: #619a00;
+}
+
+dl {
+    margin: .5em 0;
+}
+
+dt, dd {
+    display: inline;
+}
+
+textarea {
+    resize: none;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.separator {
+    padding: 0 5px;
+}
+
+#header {
+    line-height: 2.5em;
+    padding: 10px 0px;
+}
+
+    #header > h2 {
+        display: inline; /* Override bootstrap display: block */
+        font-family: 'Over The Rainbow', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
+        letter-spacing: 1px;
+    }
+
+    #header > .lang > .current {
+        color: #333333;
+    }
+
+.carousel-control {
+    /* Have to use 'Helvetica' font to center the left/right arrow */
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.ad > .figure {
+    margin-bottom: 5px;
+}
+
+#footer {
+    border-top: 1px solid #dedede;
+    background: #f2f2f2;
+    color: #777777;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+    #footer li {
+        float: left;
+    }
+
+.modal {
+    width: 640px;
+    margin-top: -350px;
+    margin-left: -360px;
+}
+
+.modal-body {
+    max-height: 800px;
+}
+
+    .modal-body .details {
+        max-height: 240px;
+        overflow: auto;
+    }
+
+.header {
+    padding: 10px 0px;
+}
+
+.section-header {
+    font-family: 'Open Sans Condensed', 'Helvetica Neue', 'Segoe UI', Helvetica, sans-serif;
+    font-size: 1.8em;
+    font-weight: normal;
+}
+
+#map {
+    width: 300px;
+    height: 280px;
+}
+
+.content {
+    margin-left: 15px;
+}
+
+.desc {
+    padding: 8px 0;
+}
+
+.ad {
+    border: 1px solid #dedede;
+    box-shadow: 0px 0px 5px 2px #efefef;
+    margin-top: 10px;
+    padding: 5px;
+    min-height: 200px;
+    max-height: 450px;
+}
+
+    .ad:hover, .list-item:hover {
+        box-shadow: 0px 0px 5px 2px #cdcdcd;
+    }
+
+    .ad .meta {
+        padding-left: 3px;
+    }
+
+.biz-list, .prop-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.list-item {
+    border: 1px solid #dedede;
+    box-shadow: 0px 0px 5px 2px #efefef;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+    .list-item .figure {
+        float: left;
+        margin: 5px 15px 5px 5px;
+    }
+
+    .list-item .info {
+        padding-top: 8px;
+        margin-left: 180px;
+    }
+
+        .list-item .info .title {
+            color: #262520;
+            font-weight: bold;
+        }
+
+        .list-item .info .desc {
+            color: #6b6c64;
+        }
+
+.list-date {
+    border-radius: 4px;
+    background-color: #fbfcfc;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    z-index: 10;
+}
+
+.list-item:hover .list-date {
+    box-shadow: 1px 1px 5px #eee;
+}
+
+.list-date .month {
+    background-color: #dedede; /*#cb5a38;*/
+    border: 1px solid #e0e0e0;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    color: #646362;
+    font-size: .8em;
+}
+
+.list-date .day {
+    border: 1px solid #e0e0e0;
+    border-radius: 0 0 4px 4px;
+    color: #619a00; /*#6b6c64;*/
+    font-weight: bold;
+}
+
+.rooms {
+    margin: 5px 0;
+}
+
+    .rooms > .room {
+        display: inline-block;
+        font-weight: bold;
+        padding-left: 30px;
+        padding-right: 5px;
+        margin-right: 10px;
+        line-height: 24px;
+    }
+
+    .rooms > .bedroom {
+        background: url('../img/bedroom.png');
+        background-repeat: no-repeat;
+    }
+
+    .rooms > .bathroom {
+        background: url('../img/bathroom.png');
+        background-repeat: no-repeat;
+    }
+
+    .rooms > .carspace {
+        background: url('../img/garage.png');
+        background-repeat: no-repeat;
+    }
+
+.search-biz {
+    background-color: #fafafa; /*#f0fae6;*/
+    border: 1px solid #e0e0e0;
+    margin-left: 10px;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+    .search-biz h4 {
+        margin-bottom: 15px;
+    }
+
+.gallery {
+    margin-left: -15px; /* To offset bootstrap left padding */
+    margin-right: -15px; /* To offset bootstrap right padding */
+    position: relative;
+    overflow-x: hidden;
+}
+
+.modal-body .details {
+    margin-left: -15px; /* To offset bootstrap left padding */
+    margin-right: -15px; /* To offset bootstrap right padding */
+}
+
+.photos {
+    position: relative;
+    width: 1600px;
+    z-index: 2000;
+}
+
+    .photos > li {
+        float: left;
+        margin-right: 30px;
+        border: 1px solid #a9a9a9;
+        box-shadow: 0 0 5px 2px #a9a9a9;
+    }
+
+.prev, .next {
+    background-color: rgba(0,0,0,.25);
+    cursor: pointer;
+    height: 300px;
+    line-height: 300px;
+    margin-top: -150px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 88px;
+    z-index: 2050;
+}
+
+.next {
+    right: 0;
+}
+
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,.4);
+    }
+
+.details {
+    margin-top: 30px;
+    max-height: 400px;
+    overflow: auto;
+}
+
+.inner-container {
+    float: left;
+}
+
+.details .information {
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-right: 1em;
+    width: 360px;
+}
+
+.agent {
+    border-bottom: 1px dotted #cdcdcd;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.tab-pane {
+    padding-left: 10px;
+}
+
+.home-search {
+    border: 1px solid #dedede;
+    padding: 2px;
+    margin: 10px 0;
+}
+
+.nav-tabs > li > a {
+    border-radius: 0;
+}
+
+.search-form .rooms > li {
+    float: left;
+    margin-right: 15px;
+}
+
+#formBusinessMgmt .control-label,
+#formPropertyMgmt .control-label {
+    text-align: left;
+}
+
+#pageEditor .control-label {
+    width: 0;
+    text-align: left;
+}
+
+#pageEditor .controls {
+    margin-left: 100px;
+}
+
+.submit-button {
+    padding-top: 10px;
+}
+
+.fh-control-wrapper {
+    padding: 5px 0;
+}
+
+.ul-attachments li {
+    float: left;
+    padding: 5px;
+}
+
+.ul-attachments > li > .ul-attachments-controller {
+    display: none;
+}
+
+.ul-attachments > li:hover > .ul-attachments-controller {
+    display: block;
+    padding-top: 5px;
+}
+
+#more-attachments > input[type=file] {
+    display: block;
+}
+
+#tabContent {
+    overflow: hidden;
+}
+
+#msgMailSent, #msgMailError {
+    display: none;
+}
+
+.chzn-results {
+    height: 180px;
+}
+
+label.error {
+    color: #cc0000;
+}

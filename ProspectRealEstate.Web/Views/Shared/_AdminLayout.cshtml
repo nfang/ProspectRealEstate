@@ -1,0 +1,82 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link href="@Url.Content("~/Content/css/normalize.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/bootstrap-wysihtml5.css")" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700|Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link href="@Url.Content("~/Content/css/main.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Content/js/vendor/modernizr-2.6.2.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/wysihtml5.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/js/vendor/jquery-1.8.2.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/jquery.validate.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/js/vendor/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/js/vendor/bootstrap.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/js/vendor/bootstrap-wysihtml5.min.js")" type="text/javascript"></script>
+</head>
+<body>
+    <div id="admin-banner" class="navbar nav-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                @Html.ActionLink("Prospect Real Estate Admin", "Admin", "Business", null, new { @class = "brand" })
+                <a class="btn btn-primary pull-right" href="/">View site</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="span3">
+                @if (ViewContext.RouteData.Values["action"].ToString().ToLower() != "logon")
+                {
+                    <ul class="nav nav-pills nav-stacked">
+                        <li @if (ViewContext.RouteData.Values["controller"].ToString() == "Business")
+                        { 
+                            @:class="active" 
+                        }>
+                            @Html.ActionLink("Business", "Admin", "Business")
+                        </li>
+                        <li @if (ViewContext.RouteData.Values["controller"].ToString() == "Property")
+                        { 
+                            @:class="active" 
+                        }>
+                            @Html.ActionLink("Property", "Admin", "Property")
+                        </li>
+                        <li>
+                            @Html.ActionLink("About", "Edit", "Page", new { id = 1 }, null)
+                        </li>
+                        <li>
+                            @Html.ActionLink("Finance", "Edit", "Page", new { id = 3 }, null)
+                        </li>
+                        <li>
+                            @Html.ActionLink("Privacy", "Edit", "Page", new { id = 5 }, null)
+                        </li>
+                    </ul>
+                }
+            </div>
+            <div class="span9">
+                @RenderBody()
+            </div>
+        </div>
+        <div id="footer">
+            <div class="pull-right">
+                <p>&copy; 2012 Prospect Real Estate. All Rights Reserved.</p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</body>
+</html>
