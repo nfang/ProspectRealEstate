@@ -27,15 +27,15 @@ namespace ProspectRealEstate.Web.Controllers
         {
             var model = new HomeViewModel();
 
-            var latestBusinessModels = from b in bizRepo.FindLatest(2)
-                                       where b.Language.LanguageName == CultureInfo.CurrentUICulture.Name
-                                       select b;
+            var latestBusinessModels = (from b in bizRepo.FindLatest()
+                                        where b.Language.LanguageName == CultureInfo.CurrentUICulture.Name
+                                        select b).Take(2);
 
             model.LatestBusinesses = latestBusinessModels.AsEnumerable().Select(b => b.ToListModel());
 
-            var latestPropertyModels = from p in propRepo.FindLatest(2)
-                                       where p.Language.LanguageName == CultureInfo.CurrentUICulture.Name
-                                       select p;
+            var latestPropertyModels = (from p in propRepo.FindLatest()
+                                        where p.Language.LanguageName == CultureInfo.CurrentUICulture.Name
+                                        select p).Take(2);
 
             model.LatestProperties = latestPropertyModels.AsEnumerable().Select(p => p.ToListModel());
 

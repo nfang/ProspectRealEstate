@@ -99,7 +99,7 @@
             @Html.Hidden("AgentName", Model.Agent.name)
             @Html.Hidden("AgentEmail", Model.Agent.email)
             }
-            @Html.Hidden("Subject", String.Join(",", @Model.business_code + ": " + @Model.street, @Model.Suburb.name, @Model.postcode))
+            @Html.Hidden("Subject", String.Join(",", @Model.business_code + ": " + @Model.title, @Model.street, @Model.Suburb.name, @Model.postcode))
             <fieldset>
                 <label>@Resx.Detail.Detail.YourName</label>
                 @Html.TextBox("UserName", null, new { @class = "span2 required" })

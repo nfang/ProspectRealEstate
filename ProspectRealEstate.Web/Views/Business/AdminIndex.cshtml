@@ -67,7 +67,7 @@
 </table>
 <script type="text/javascript">
     $(function () {
-        $('.archive-button').click(function () {
+        $('.archive-button').live('click', function () {
             var $this = $(this)
               , model = {
                   ID: $this.data("key")
@@ -86,7 +86,7 @@
             });
         });
 
-        $('.activate-button').click(function () {
+        $('.activate-button').live('click', function () {
             var $this = $(this)
               , model = {
                   ID: $this.data("key")

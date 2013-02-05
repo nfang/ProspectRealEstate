@@ -14,7 +14,7 @@ namespace ProspectRealEstate.Web.Controllers
     [HandleCulture]
     public class ContactUsController : Controller
     {
-        private SmtpClient client = new SmtpClient();
+        private SmtpClient client = new SmtpClient() { EnableSsl = true };
 
         public ActionResult Index()
         {
@@ -31,9 +31,9 @@ namespace ProspectRealEstate.Web.Controllers
             {
                 var email = new MailMessage(new MailAddress(model.From), new MailAddress(to));
                 email.Subject = "General query";
-                email.Body = HttpUtility.HtmlEncode(model.Message + "\r\n" + model.SenderName);
+                email.Body = HttpUtility.HtmlEncode(model.Message + "\r\n" + model.SenderName+ "\r\n" + model.From);
                 email.IsBodyHtml = false;
-
+                
                 client.Send(email);
                 return Content("success");
             }

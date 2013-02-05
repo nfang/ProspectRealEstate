@@ -36,7 +36,7 @@ namespace ProspectRealEstate.Web.Models
 
         public IQueryable<Property> All
         {
-            get 
+            get
             {
                 return from p in db.Properties
                        select p;
@@ -46,17 +46,17 @@ namespace ProspectRealEstate.Web.Models
         public IQueryable<Property> FindFeatured()
         {
             return from p in db.Properties
-                   where p.featured && 
+                   where p.featured &&
                         (string.IsNullOrEmpty(p.status) || p.status != PROPERTY_STATUS_ARCHIVED)
                    select p;
         }
 
-        public IQueryable<Property> FindLatest(int num = 5)
+        public IQueryable<Property> FindLatest()
         {
-            return (from p in db.Properties
-                    where (string.IsNullOrEmpty(p.status) || p.status != PROPERTY_STATUS_ARCHIVED)
-                    orderby p.added_on
-                    select p).Take(num);
+            return from p in db.Properties
+                   where (string.IsNullOrEmpty(p.status) || p.status != PROPERTY_STATUS_ARCHIVED)
+                   orderby p.added_on descending
+                   select p;
         }
 
         public IQueryable<Property> FindBySearchModel(PropertySearchModel sm)

@@ -11,7 +11,7 @@ namespace ProspectRealEstate.Web.Models
     {
         Property Find(string code);
         IQueryable<Property> FindFeatured();
-        IQueryable<Property> FindLatest(int num);
+        IQueryable<Property> FindLatest();
         IQueryable<Property> FindBySearchModel(PropertySearchModel model);
     }
 }

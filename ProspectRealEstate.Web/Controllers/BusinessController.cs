@@ -28,7 +28,7 @@ namespace ProspectRealEstate.Web.Controllers
         CommonRepository commons;
         AgentRepository agentRepository;
 
-        private SmtpClient client = new SmtpClient();
+        private SmtpClient client = new SmtpClient() { EnableSsl = true };
 
         private const int PAGE_SIZE = 10;
 
@@ -353,7 +353,7 @@ namespace ProspectRealEstate.Web.Controllers
                 {
                     var email = new MailMessage(new MailAddress(model.UserEmail), new MailAddress(model.AgentEmail));
                     email.Subject = model.Subject;
-                    email.Body = HttpUtility.HtmlEncode(model.Message + "\r\n" + model.UserName);
+                    email.Body = HttpUtility.HtmlEncode(model.Message + "\r\n" + model.UserName + "\r\n" + model.UserEmail);
                     email.IsBodyHtml = false;
 
                     client.Send(email);

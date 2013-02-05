@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AskingPrice" xml:space="preserve">
-    <value>Asking Price</value>
+    <value>售价</value>
   </data>
   <data name="Contact" xml:space="preserve">
     <value>联系人</value>
@@ -130,7 +130,7 @@
     <value>面积</value>
   </data>
   <data name="LeasePrice" xml:space="preserve">
-    <value>Lease Price</value>
+    <value>周租</value>
   </data>
   <data name="Message" xml:space="preserve">
     <value>留言</value>
@@ -139,13 +139,13 @@
     <value>价格</value>
   </data>
   <data name="RentPrice" xml:space="preserve">
-    <value>Rent Price</value>
+    <value>周租</value>
   </data>
   <data name="SendMyQuery" xml:space="preserve">
     <value>发送</value>
   </data>
   <data name="TakingPrice" xml:space="preserve">
-    <value>Taking Price</value>
+    <value>周入</value>
   </data>
   <data name="ThankYouMessage" xml:space="preserve">
     <value>感谢您的询问。您的简讯已经送达，我们将尽快回复。</value>

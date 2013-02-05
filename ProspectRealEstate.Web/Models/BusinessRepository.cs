@@ -37,7 +37,8 @@ namespace ProspectRealEstate.Web.Models
 
         public IQueryable<Business> All
         {
-            get {
+            get
+            {
                 return from b in db.Businesses
                        select b;
             }
@@ -46,26 +47,26 @@ namespace ProspectRealEstate.Web.Models
         public IQueryable<Business> FindFeatured()
         {
             return from b in db.Businesses
-                   where b.featured && 
+                   where b.featured &&
                          (string.IsNullOrEmpty(b.status) || b.status != BUSINESS_STATUS_ARCHIVED)
                    select b;
         }
 
-        public IQueryable<Business> FindLatest(int num = 5)
+        public IQueryable<Business> FindLatest()
         {
-            return (from b in db.Businesses
-                    where (string.IsNullOrEmpty(b.status) || b.status != BUSINESS_STATUS_ARCHIVED)
-                    orderby b.added_on
-                    select b).Take(num);
+            return from b in db.Businesses
+                   where (string.IsNullOrEmpty(b.status) || b.status != BUSINESS_STATUS_ARCHIVED)
+                   orderby b.added_on descending
+                   select b;
         }
 
         public IQueryable<Business> FindBySearchModel(BusinessSearchModel sm)
         {
-            if (sm.BusinessLocation == null || sm.BusinessLocation.Count == 0) 
+            if (sm.BusinessLocation == null || sm.BusinessLocation.Count == 0)
                 throw new ArgumentException("Suburb must be provided.");
 
             IQueryable<Business> bs = from b in db.Businesses
-                                      where sm.BusinessLocation.Contains(b.suburb_id) && 
+                                      where sm.BusinessLocation.Contains(b.suburb_id) &&
                                             (string.IsNullOrEmpty(b.status) || b.status != BUSINESS_STATUS_ARCHIVED)
                                       select b;
 
