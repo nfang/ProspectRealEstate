@@ -50,7 +50,7 @@
                 </td>
                 <td>@item.Title</td>
                 <td>@item.AddedOn.ToShortDateString()</td>
-                <td>
+                <td class="active-archive-button-group">
                     @Html.ActionLink("Edit", "Edit", "Business", new { id = @item.ID }, new { @class = "btn" })
                     @if (item.Status != "archived")
                     {
@@ -67,7 +67,7 @@
 </table>
 <script type="text/javascript">
     $(function () {
-        $('.archive-button').live('click', function () {
+        $('.active-archive-button-group').on('click', '.archive-button', function () {
             var $this = $(this)
               , model = {
                   ID: $this.data("key")
@@ -86,7 +86,7 @@
             });
         });
 
-        $('.activate-button').live('click', function () {
+        $('.active-archive-button-group').on('click', '.activate-button', function () {
             var $this = $(this)
               , model = {
                   ID: $this.data("key")
